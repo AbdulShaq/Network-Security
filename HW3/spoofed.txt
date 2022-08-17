@@ -1,0 +1,13 @@
+Task A analysis:
+
+Legit DNS responses usually are longer in length and they carry more additional
+records. Also In my injection.pcap the legit DNS responses had a few ways they 
+differedfrom the spoofed ones. For example the IP sources and destenations were 
+flipped from each other and same for the destenation and source ports. The 
+real response also had more athority answers than the fake since the real one
+actually got authenticated on its path. but things like the DNS ID ,the Opcode
+values and ancount stayed the same. There are some values that are expected for
+certain fields so they can be copied such as QR where responses are 1, but others
+arent so definite such as the athority answer which depends on the host sending the
+response since this is the most important field since it specifies that this response
+is from an athority from the source.

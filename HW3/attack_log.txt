@@ -1,0 +1,10 @@
+-March 28 2022 14:51:01
+-TXID0xab86Requestwww.example.com
+-Answer1 [93.184.216.34]
+-Answer2 [10.6.6.9]
+
+-March 28 2022 14:51:08
+-TXID0x67edRequestwww.cs.uic.edu
+-Answer1 [131.193.32.29]
+-Answer2 [10.6.6.8]
+

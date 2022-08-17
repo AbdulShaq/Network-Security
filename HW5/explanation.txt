@@ -1,0 +1,18 @@
+My first approach to this assignment was to look up the paramiko documentation to understand how it can help.
+after reading each of the API documentation descriptions online I focused more on two specific parts, the 
+"Server implementation" and "Transport". I read through the class methods for each and then attempted to set
+up my honeypot, which turned to be unsuccessful. After some futher research I tried a new method and used sockets
+and threading for my implementation, this built the connection but I kept having issues with paramiko.ServerInterface.
+After reading some piazza posts from students having similar issues I found out I have to over ride multiple methods to get it 
+to work properly. from there I edited those over ridden function to give me the username of the user trying to login and then 
+creating a dictionary with the usernames to keep count of the attempted logins for each so I can let them in after 5 tries.
+then from there I worked on displaying the SSH functionality and adding a few commands as needed by running the user input through
+a method that handles the commands asked for us and I actually would make, read and write, the text files created and copied by the
+user and stored the names in a list and then just file write and read based on what needed to be done.
+(please grade with mercy, I need to pass)
+
+refrences:
+  https://docs.python.org/3/library/socket.html
+  https://docs.python.org/3/library/threading.html
+  https://docs.paramiko.org/en/stable/api/transport.html
+  https://docs.paramiko.org/en/stable/api/server.html

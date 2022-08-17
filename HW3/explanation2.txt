@@ -1,0 +1,27 @@
+DNS Detect Explanation:
+
+    For my DNS Detect program I had to be able to look at multiple packets and 
+    hold them since my spoofed might come before the real response or if its a bit
+    slow it will come after it anf if another request is made before my spoofed response
+    showed up it would be between the 2 responses so I have to hold multiple reponse packets
+    and compare them until I find 2 responses that share a qname a and DNS ID and since
+    I know my packets and structed to have the source ports and destenation ports switched
+    compared the real response and same for the IP source and destenation. Also if it doesnt
+    have a DNS response field I just would Ignore it since that would be a request packet 
+    and wouldnt be needed to check. I then had the issue with where the order of the packets
+    came whether it was the spoofed packet first or the real request packet first,
+    so it would sometimes write the spoofed address as answer 1 and the legit one as
+    answer 2. So to fix that before I ignore a request packet I save its source IP
+    because based on my spoofed packets I know that the request packets source IP
+    matched the spoofed packets source IP, I would then know how to structure the write
+    data to attack_log.txt so that the legit IP is for answer 1 and the fake IP for answer 2.
+    Then I would access the packets timestamp and format the data to show in the proper format
+    and the packets DNS ID and format it to hex value and the DNS qname so I can write that
+    information to the attack_log.txt as well.
+
+
+Refrences:
+https://scapy.readthedocs.io/en/latest/api/scapy.html
+https://www.geeksforgeeks.org/getopt-module-in-python/
+https://mislove.org/teaching/cs4700/spring11/handouts/project1-primer.pdf
+https://mpostument.medium.com/dns-spoofer-with-scapy-part-5-4a84b17f35a3

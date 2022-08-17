@@ -1,0 +1,16 @@
+For password_cracker.py the first thing I wanted to do was figure out how
+to crack the passowrds wihtout any added security. So I started by figuring out a way
+to distinguish between the diffrent hashing algorithms and their values and came to find
+their lengths were diffrent so I utilized that to tell my password cracker function which
+hashing type to use for the passwords. After the passwords were encoded and hashed I compared them
+to the has values given in the shadow.txt file given, if it matched I printed the password and then returned.
+But if it was not found then thats when I would apply the extra security methods, first starting
+with the quickest which was the Leet speak then the Caeser Cipher if the Leet speak did not
+work then finally the SALT if neither of them worked. One of the issues I struggled with was in the SALT,
+I was trying to append a 5 digit value starting from 10,000-99,999 until I realized 00000
+is also a valid 5 digit SALT, then I rewrote the function to include values 00000-99,999 and I cracked it.
+the other issue I faced and sadly did not solve was the Caeser Cipher, I applied all the instructions
+and hints given to us by the TA's and professor but sadly could not crack it. I would love to know
+what I did wrong and if I was close.
+  
+                  `Abdul Shaqildi :)

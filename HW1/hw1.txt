@@ -1,0 +1,21 @@
+1: 6 packets
+2: 52:54:00:c1:60:15
+3: userID=5aabfbf1-b9d4-4334-b8d2-7cf9e24bb61b
+4: net.educause.edu
+5: username = user124& passowrd = hunter312
+6: 6.jpg
+
+7: username = cs155@dummymail.com
+8: password = whitehat
+9: 5 messages
+
+10:10.pcap
+
+11: tcpdump -n -r trace1.pcap src host 143.244.144.131
+12: tcpdump -n -r trace1.pcap dst port 80
+13: tcpdump -n -r trace1.pcap arp
+14: tcpdump -n -r trace1.pcap dst host 74.125.225.81 and dst port 443
+
+15: 22/tcp ssh, 80/tcp http, 443/tcp https 
+16: nmap -sU -p scanme.insecure.org
+17: Linux 5.0 - 5.4

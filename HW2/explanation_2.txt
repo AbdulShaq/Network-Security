@@ -1,0 +1,18 @@
+For task 2 in analysis.py I had to do a lot of research before starting because I have never done
+something like this before so I had to know where to start. Once I had a good idea of what I had to do
+I started with the approch of mapping letter frequncies and updating the mapping with every new word that
+I would map and then intersect the mappings to update to a new one until I get to the end. This did not work
+Until I realzied I should try using the dictionary to find possible word patterns using dictionary.txt then refrence that
+when trying to hack the cipher. The hurdle I faced was that this implentation I was applying was not working
+until I realized that the dictionary.txt we had was for possible passwords and contained Leet speak passwords
+and numbers so it didnt help, so to fix then i found a list of almost 38,000 common english words
+(because the more info I had the more it helped) then I put it ina text file called CommonDict.txt and 
+reffreenced that which helped except some letters had multiple mappings. So I had the decrypted text print blank
+spaces for where ever there was a letter that had more than one mapping and then I was able to read
+the text and see what letter would make this a word and was able to type up the correct and complete key.
+and from there I was able to apply the key to each password and hash it then compare it to user7's
+hash value until I found the password.
+(I added the CommonDict.txt to the folder I hope its not an issue)
+
+             
+                                             -Abdul Shaqildi

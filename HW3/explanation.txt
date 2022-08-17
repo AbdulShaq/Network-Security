@@ -1,0 +1,29 @@
+DNS Injection Explanation:
+
+    For my DNS inject program I first had to understand what a DNS request looked like and
+    what a DNS response looked like. I started by just using dig to make DNS traffic then 
+    I would use sniff to catch DNS packets then I would print the packets using .show().
+    I analyized the 2 packets to see how they look and differ. Then I tried to construct my
+    fake packet off of the legitement reponse packet as it came in, then scan the traffic using
+    wireshark. I came to realize this way would always result in my spoofed packet coming in
+    secoond to the real one, since I would read the reponse as it came in. So I decieded to
+    capture the request and make my reponse so that there could be the chance they my packet 
+    arrived first (which it did on occasion). At first wireshark would not catch my packets 
+    if I tried making it exactly like the reponse, for example if I made the requests source
+    IP my packets destenation IP and my Packets source packet the requests destenation it 
+    would not catch it, but if I flipped them it would and wireshark would flag it as a 
+    response to the DNS request packet. Then when it came to poisoning the hostnames given
+    I would put the hostname with its corresponding spoof IP into a dictionary then check
+    if the request packet I was scanning was requesting for that site then Id inject my 
+    spoofed response with its poisoned address. If not list was given I pulled the systems
+    IP and used that for every packet.Other than that I tried to mimic everythingelse exactly 
+    as the response packet would. I also setup a Virtualenv in python while testing my code. 
+    An issue I ran into in the begining was that even though I had scapy installed and imported
+    scapy.all, my code wouldnt recoginze things like IP or UDP unless I imported it directly.
+
+
+Refrences:
+https://scapy.readthedocs.io/en/latest/api/scapy.html
+https://www.geeksforgeeks.org/getopt-module-in-python/
+https://mislove.org/teaching/cs4700/spring11/handouts/project1-primer.pdf
+https://www.geeksforgeeks.org/how-to-make-a-dns-spoof-attack-using-scapy-in-python/
